@@ -2134,7 +2134,7 @@ async function testApiConnection() {
 		const accessToken = await getValidAccessToken();
 
 		// Test the token by making a simple API call to list records
-		const testUrl = `https://open.feishu.cn/open-apis/bitable/v1/apps/${apiConfig.appId}/tables/${apiConfig.tableId}/records?page_size=1`;
+		const testUrl = `https://open.feishu.cn/open-apis/bitable/v1/apps/${apiConfig.multiId}/tables/${apiConfig.tableId}/records?page_size=1`;
 
 		const response = await fetch(testUrl, {
 			method: 'GET',
