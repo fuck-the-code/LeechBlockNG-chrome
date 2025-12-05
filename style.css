@@ -1,0 +1,260 @@
+/* LeechBlock blocking/delaying page style */
+
+@media (prefers-color-scheme: light) {
+
+	body {
+		background: #fff;
+	}
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+	body {
+		background: #222;
+	}
+
+}
+
+body {
+	color: #2e3436;
+	font: normal 16px "Open Sans", Arial, sans-serif;
+	text-align: center;
+}
+
+div {
+	margin-top: 40px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+a {
+    color: #2ca089;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+	font-weight: bold;
+}
+
+input, button {
+	color: #333;
+	font: normal 16px "Open Sans", Arial, sans-serif;
+	padding: 2px 8px;
+	border: 1px solid #888;
+	border-radius: 6px;
+}
+
+button {
+	background: #eee;
+}
+
+button:hover:enabled {
+	background: #ddd;
+}
+
+button:active:enabled {
+	background: #ccc;
+}
+
+.logo {
+	width: 408px;
+}
+
+.keyword {
+	font-weight: bold;
+}
+
+.time {
+	font-weight: bold;
+}
+
+.delay {
+	font-weight: bold;
+}
+
+.error {
+	background: #f00;
+}
+
+.support {
+	color: #777;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.support a {
+	color: #777;
+	text-decoration: underline;
+}
+
+/* Reason input styles - matching LeechBlock native UI */
+#lbReasonDiv {
+	/* Use same spacing as other divs */
+	margin-top: 40px;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#lbReasonDiv fieldset {
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#lbReasonDiv legend {
+	font-weight: bold;
+	color: #2e3436;
+	padding: 0 10px;
+	font-size: 18px;
+}
+
+#lbReasonDiv em {
+	color: #666;
+	font-style: italic;
+	font-size: 14px;
+}
+
+#lbReasonDiv p {
+	margin: 10px 0;
+}
+
+#lbReasonDiv textarea {
+	width: 100%;
+	max-width: 100%;
+	min-height: 80px;
+	padding: 8px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font: normal 14px "Open Sans", Arial, sans-serif;
+	resize: vertical;
+	background: white;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lbReasonDiv textarea:focus {
+	outline: none;
+	border-color: #2ca089;
+	box-shadow: 0 0 5px rgba(44, 160, 137, 0.3);
+}
+
+#lbReasonDiv button {
+	color: #fff;
+	font: normal 14px "Open Sans", Arial, sans-serif;
+	padding: 8px 24px;
+	margin: 0 5px;
+	border: 1px solid #2ca089;
+	border-radius: 4px;
+	background: #2ca089;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#lbReasonDiv button:hover:enabled {
+	background: #249077;
+	border-color: #249077;
+}
+
+#lbReasonDiv button:active:enabled {
+	background: #1e7a63;
+	border-color: #1e7a63;
+}
+
+#lbReasonDiv button:disabled {
+	background: #ccc;
+	color: #888;
+	cursor: not-allowed;
+	border-color: #bbb;
+}
+
+.status-message {
+	margin-left: 10px;
+	font-size: 14px;
+}
+
+.status-message.success {
+	color: #2ca089;
+}
+
+.status-message.error {
+	color: #d32f2f;
+}
+
+/* Dark mode support for reason input */
+@media (prefers-color-scheme: dark) {
+
+	body {
+		color: #bbb;
+	}
+
+	#lbReasonDiv legend {
+		color: #bbb;
+	}
+
+	#lbReasonDiv em {
+		color: #999;
+	}
+
+	#lbReasonDiv fieldset {
+		border: 1px solid #666;
+		background: rgba(0, 0, 0, 0.3);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	#lbReasonDiv textarea {
+		background: #333;
+		color: #bbb;
+		border: 1px solid #666;
+	}
+
+	#lbReasonDiv textarea:focus {
+		border-color: #2ca089;
+		box-shadow: 0 0 5px rgba(44, 160, 137, 0.5);
+	}
+
+	#lbReasonDiv textarea::placeholder {
+		color: #777;
+	}
+
+	#lbReasonDiv button {
+		background: #2ca089;
+		color: #fff;
+		border: 1px solid #2ca089;
+	}
+
+	#lbReasonDiv button:hover:enabled {
+		background: #249077;
+		border-color: #249077;
+	}
+
+	#lbReasonDiv button:active:enabled {
+		background: #1e7a63;
+		border-color: #1e7a63;
+	}
+
+	#lbReasonDiv button:disabled {
+		background: #555;
+		color: #888;
+		border: 1px solid #555;
+	}
+
+	.status-message.success {
+		color: #4caf50;
+	}
+
+	.status-message.error {
+		color: #f44336;
+	}
+
+}

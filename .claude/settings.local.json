@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(openspec --help:*)",
+      "Bash(openspec init:*)",
+      "Bash(openspec help:*)",
+      "Bash(curl:*)",
+      "Bash(unzip:*)",
+      "Bash(test:*)",
+      "Bash(openspec change:*)",
+      "Bash(openspec:*)",
+      "Bash(node -c:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
