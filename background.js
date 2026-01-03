@@ -2017,8 +2017,8 @@ async function getApiConfig() {
 			apiMultiId: "",
 			apiAppSecret: "",
 			apiTableId: "",
-			apiFieldName: "网站",
-			apiRemarksFieldName: "备注"
+			apiFieldName: "Website",
+			apiRemarksFieldName: "Remarks"
 		});
 
 		return {
@@ -2027,8 +2027,8 @@ async function getApiConfig() {
 			multiId: result.apiMultiId || "",
 			appSecret: result.apiAppSecret || "",
 			tableId: result.apiTableId || "",
-			fieldName: result.apiFieldName || "网站",
-			remarksFieldName: result.apiRemarksFieldName || "备注"
+			fieldName: result.apiFieldName || "Website",
+			remarksFieldName: result.apiRemarksFieldName || "Remarks"
 		};
 	} catch (error) {
 		warn("Failed to get API config: " + error.message);
@@ -2038,8 +2038,8 @@ async function getApiConfig() {
 			multiId: "",
 			appSecret: "",
 			tableId: "",
-			fieldName: "网站",
-			remarksFieldName: "备注"
+			fieldName: "Website",
+			remarksFieldName: "Remarks"
 		};
 	}
 }

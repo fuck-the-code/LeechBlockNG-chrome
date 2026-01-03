@@ -116,8 +116,8 @@ const GENERAL_OPTIONS = {
 	apiMultiId: { type: "string", def: "", id: "apiMultiId" }, // default: blank
 	apiAppSecret: { type: "string", def: "", id: "apiAppSecret" }, // default: blank
 	apiTableId: { type: "string", def: "", id: "apiTableId" }, // default: blank
-	apiFieldName: { type: "string", def: "网站", id: "apiFieldName" }, // default: "网站"
-	apiRemarksFieldName: { type: "string", def: "备注", id: "apiRemarksFieldName" }, // default: "备注"
+	apiFieldName: { type: "string", def: "Website", id: "apiFieldName" }, // default: "Website"
+	apiRemarksFieldName: { type: "string", def: "Remarks", id: "apiRemarksFieldName" }, // default: "Remarks"
 	saveSecs: { type: "string", def: "10", id: "saveSecs" }, // default: every 10 seconds
 	clockOffset: { type: "string", def: "", id: "clockOffset" }, // default: no offset
 	ignoreJumpSecs: { type: "string", def: "", id: "ignoreJumpSecs" }, // default: do not ignore time jumps

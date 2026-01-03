@@ -1358,23 +1358,72 @@ browser.runtime.getPlatformInfo().then(
 	function (info) { gIsAndroid = (info.os == "android"); }
 );
 
-// Save original HTML of form
-gFormHTML = $("#form").html();
-
-// Initialize alert dialogs
-$("div[id^='alert']").dialog({
-	autoOpen: false,
-	modal: true,
-	width: 600,
-	buttons: {
-		OK: function () { $(this).dialog("close"); }
+// Wait for both jQuery and DOM to be ready
+function initJQueryDependentCode() {
+	// Check if jQuery is available
+	if (typeof $ === 'undefined') {
+		console.error('jQuery is not loaded. Please ensure jQuery is available.');
+		return;
 	}
-});
 
-// Initialize access control prompts
-initAccessControlPrompt("promptPassword");
-initAccessControlPrompt("promptAccessCode");
+	// Save original HTML of form
+	const formElement = document.getElementById("form");
+	if (formElement) {
+		gFormHTML = $("#form").html();
+	}
 
-window.addEventListener("DOMContentLoaded", retrieveOptions);
+	// Initialize alert dialogs
+	$("div[id^='alert']").dialog({
+		autoOpen: false,
+		modal: true,
+		width: 600,
+		buttons: {
+			OK: function () { $(this).dialog("close"); }
+		}
+	});
+
+	// Initialize access control prompts
+	initAccessControlPrompt("promptPassword");
+	initAccessControlPrompt("promptAccessCode");
+}
+
+// Wait for DOM and jQuery to be ready
+function waitForJQuery(callback, maxWait) {
+	maxWait = maxWait || 5000; // Default 5 second timeout
+	const startTime = Date.now();
+	
+	function check() {
+		if (typeof $ !== 'undefined') {
+			callback();
+		} else if (Date.now() - startTime < maxWait) {
+			setTimeout(check, 10);
+		} else {
+			console.error('jQuery failed to load within timeout period. The options page may not function correctly.');
+			// Try to show form anyway using vanilla JS as fallback
+			const form = document.getElementById("form");
+			if (form) {
+				form.style.display = "block";
+			}
+		}
+	}
+	check();
+}
+
+function initializePage() {
+	// Initialize jQuery-dependent code
+	initJQueryDependentCode();
+	
+	// Retrieve and display options
+	retrieveOptions();
+}
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', function() {
+		waitForJQuery(initializePage);
+	});
+} else {
+	// DOM is already ready, but wait for jQuery
+	waitForJQuery(initializePage);
+}
 
 window.addEventListener("keydown", handleKeyDown);

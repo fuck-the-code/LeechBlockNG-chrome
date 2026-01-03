@@ -568,12 +568,12 @@
 						</p>
 						<p>
 							<label>App ID:</label>
-							<input id="apiAppId" type="text" size="40" placeholder="应用ID (e.g., cli_a9b8f9e007b8dced)"
-								title="用于获取access_token">
+							<input id="apiAppId" type="text" size="40" placeholder="App ID (e.g., cli_a9b8f9e007b8dced)"
+								title="Used to get access_token">
 						</p>
 						<p>
 							<label>App Secret:</label>
-							<input id="apiAppSecret" type="password" size="60" placeholder="应用密钥" title="飞书应用密钥">
+							<input id="apiAppSecret" type="password" size="60" placeholder="App Secret" title="Feishu App Secret">
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<input id="apiAppSecretShow" type="checkbox">
 							<label for="apiAppSecretShow">Show secret</label>
@@ -581,12 +581,12 @@
 						<p>
 							<label>Multidimensional ID:</label>
 							<input id="apiMultiId" type="text" size="40"
-								placeholder="多维表格ID (e.g., LMWDbfmRmax120snOq2c0d8QnEc)" title="用于API调用">
+								placeholder="Multidimensional ID (e.g., LMWDbfmRmax120snOq2c0d8QnEc)" title="Used for API calls">
 						</p>
 						<p>
 							<label>Table ID:</label>
-							<input id="apiTableId" type="text" size="40" placeholder="表格ID (e.g., tbleEFQkXSZz9XfS)"
-								title="飞书多维表格标识">
+							<input id="apiTableId" type="text" size="40" placeholder="Table ID (e.g., tbleEFQkXSZz9XfS)"
+								title="Feishu Multidimensional Table ID">
 						</p>
 						<p>
 							<label>Current Access Token Status:</label>
@@ -595,32 +595,32 @@
 						</p>
 						<p>
 							<label>Field Name for Website URL:</label>
-							<input id="apiFieldName" type="text" size="20" value="网站"
+							<input id="apiFieldName" type="text" size="20" value="Website"
 								title="Field name in the API to store the blocked website URL">
 						</p>
 						<p>
 							<label>Field Name for Remarks:</label>
-							<input id="apiRemarksFieldName" type="text" size="20" value="备注"
+							<input id="apiRemarksFieldName" type="text" size="20" value="Remarks"
 								title="Field name in the API to store user-provided reasons">
 						</p>
 						<p>
-							<strong>配置说明：</strong>
+							<strong>Configuration Instructions:</strong>
 						</p>
 						<div
 							style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 4px solid #2ca089; font-size: 14px;">
-							<strong>获取应用凭证：</strong><br>
-							1. 打开 <a href="https://open.feishu.cn/app" target="_blank">飞书开放平台</a><br>
-							2. 创建应用并启用 "多维表格" 权限<br>
-							3. <strong>App ID</strong>：获取应用ID（仅用于获取token）如：<code>cli_a9b8f9e007b8dced</code><br>
+							<strong>Get App Credentials:</strong><br>
+							1. Open <a href="https://open.feishu.cn/app" target="_blank">Feishu Open Platform</a><br>
+							2. Create an app and enable "Multidimensional Table" permission<br>
+							3. <strong>App ID</strong>: Get the app ID (only for getting token) e.g., <code>cli_a9b8f9e007b8dced</code><br>
 							4. <strong>Multidimensional
-								ID</strong>：获取多维表格应用ID（用于API调用）如：<code>LMWDbfmRmax120snOq2c0d8QnEc</code><br>
-							5. <strong>App Secret</strong>：获取应用密钥<br>
-							6. <strong>Table ID</strong>：获取表格ID，格式如：<code>tbleEFQkXSZz9XfS</code><br>
-							7. 系统会自动获取和刷新 access_token
+								ID</strong>: Get the multidimensional table app ID (for API calls) e.g., <code>LMWDbfmRmax120snOq2c0d8QnEc</code><br>
+							5. <strong>App Secret</strong>: Get the app secret<br>
+							6. <strong>Table ID</strong>: Get the table ID, format like: <code>tbleEFQkXSZz9XfS</code><br>
+							7. The system will automatically get and refresh access_token
 						</div>
 						<p>
-							<strong>隐私提示：</strong> 此功能会将被屏蔽的网站信息发送到外部API。
-							请确保您有适当的授权并了解隐私影响。API调用是非阻塞的，不会影响核心屏蔽功能。
+							<strong>Privacy Note:</strong> This feature will send blocked website information to an external API.
+							Please ensure you have appropriate authorization and understand the privacy implications. API calls are non-blocking and will not affect core blocking functionality.
 						</p>
 					</fieldset>
 					<fieldset>

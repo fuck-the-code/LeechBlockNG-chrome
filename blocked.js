@@ -224,21 +224,27 @@ function logBlockedWebsiteToAPI(url) {
 					gRecordId = response.recordId;
 					showReasonInput();
 				} else {
-					console.log("[LBNG DEBUG] No recordId in response, reason input will not be shown");
-					// Optional: Show debug message to user
-					let reasonDiv = getElement("lbReasonDiv");
-					if (reasonDiv) {
-						reasonDiv.style.display = "block";
-						let statusElement = getElement("lbReasonStatus");
-						if (statusElement) {
-							statusElement.textContent = "API call completed but no record ID received";
-							statusElement.className = "status-message";
+					// Only show error message if API was actually called but failed
+					// Don't show error if API is disabled or not configured
+					if (response && !response.apiDisabled) {
+						console.log("[LBNG DEBUG] No recordId in response, API was called but failed");
+						// Show error message only when API was actually called
+						let reasonDiv = getElement("lbReasonDiv");
+						if (reasonDiv) {
+							reasonDiv.style.display = "block";
+							let statusElement = getElement("lbReasonStatus");
+							if (statusElement) {
+								statusElement.textContent = "API call completed but no record ID received";
+								statusElement.className = "status-message";
+							}
+							// Hide input and button since no recordId
+							let reasonInput = getElement("lbReasonInput");
+							let submitButton = getElement("lbReasonSubmit");
+							if (reasonInput) reasonInput.style.display = "none";
+							if (submitButton) submitButton.style.display = "none";
 						}
-						// Hide input and button since no recordId
-						let reasonInput = getElement("lbReasonInput");
-						let submitButton = getElement("lbReasonSubmit");
-						if (reasonInput) reasonInput.style.display = "none";
-						if (submitButton) submitButton.style.display = "none";
+					} else {
+						console.log("[LBNG DEBUG] API is disabled or not configured, no error message shown");
 					}
 				}
 			}).catch(error => {
